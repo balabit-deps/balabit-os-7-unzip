@@ -1,3 +1,20 @@
+unzip (6.0-21ubuntu1.1) bionic-security; urgency=medium
+
+  * SECURITY UPDATE: buffer overflow in password protected ZIP archives
+    - debian/patches/20-cve-2018-1000035-unzip-buffer-overflow.patch: Perform
+      check before allocating memory in fileio.c.
+    - CVE-2018-1000035 
+  * SECURITY UPDATE: denial of service (resource consumption)
+    - debian/patches/22-cve-2019-13232-fix-bug-in-undefer-input.patch: Fix bug
+      in undefer_input() of fileio.c that misplaced the input state.
+    - debian/patches/23-cve-2019-13232-zip-bomb-with-overlapped-entries.patch:
+      Detect and reject a zip bomb using overlapped entries.
+    - debian/patches/24-cve-2019-13232-do-not-raise-alert-for-misplaced-central-directory.patch:
+      Do not raise a zip bomb alert for a misplaced central directory.
+    - CVE-2019-13232
+
+ -- Avital Ostromich <avital.ostromich@canonical.com>  Thu, 26 Nov 2020 16:01:36 -0500
+
 unzip (6.0-21ubuntu1) artful; urgency=low
 
   * Merge from Debian unstable.  Remaining changes:
